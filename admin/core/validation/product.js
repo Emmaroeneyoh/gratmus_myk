@@ -55,6 +55,7 @@ const adminupdateProductValidation = (req, res, next) => {
     breadth: joi.number().required(),
     weight: joi.number().required(),
     quantity: joi.number().required(),
+    special_features: joi.array().required(),
   });
   const { error } = schema.validate(req.body);
   if (error) {

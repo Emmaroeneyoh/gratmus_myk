@@ -82,7 +82,7 @@ const updateProductController = async (req, res, next) => {
     length,
     breadth,
     weight,
-    quantity,
+    quantity, special_features
   } = req.body;
   const name = productname.toLowerCase();
   const price = productprice;
@@ -106,7 +106,7 @@ const updateProductController = async (req, res, next) => {
       quantity,
       coverimage,
       free_delivery,
-      discountprice,
+      discountprice, special_features
     };
 
     let trainee = await updateProductModel(data, res);

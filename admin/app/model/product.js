@@ -20,7 +20,6 @@ const createProductModel = async (data, res) => {
       discountprice,
       special_features,
     } = data;
-
     const form = await new ProductModel({
       name,
       quantity,
@@ -67,7 +66,7 @@ const updateProductModel = async (data, res) => {
       quantity,
       coverimage,
       free_delivery,
-      discountprice,
+      discountprice, special_features
     } = data;
 
     const updateproduct = await ProductModel.findByIdAndUpdate(productid, {
@@ -80,7 +79,7 @@ const updateProductModel = async (data, res) => {
         description,
         category,
         coverimage,
-        free_delivery,
+        free_delivery, special_features ,
         dimension: {
           length,
           breadth,

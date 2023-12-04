@@ -60,7 +60,10 @@ const Productschema = new schema({
             ]
         },
         special_features: {
-            default: []
+            default: [],
+            type: [
+                {}
+            ]
         },
         description:{
             type:String
