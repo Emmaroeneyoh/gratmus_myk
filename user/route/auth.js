@@ -1,4 +1,6 @@
+const { contactusCONTROLLER } = require("../app/controller");
 const { userSignupController, userLoginController, userNewPasswordLink, userresetPassword } = require("../app/controller/auth");
+const { contactusValidation } = require("../core/validation");
 const { usersignupValidation, userLoginValidation, userforgotpasswordValidation, userResetpasswordValidation } = require("../core/validation/auth");
 
 
@@ -8,6 +10,10 @@ router.post("/signup", usersignupValidation, userSignupController);
 router.post("/login",  userLoginValidation, userLoginController);
 router.post("/forgot/password", userforgotpasswordValidation, userNewPasswordLink);
 router.post("/reset/password", userResetpasswordValidation, userresetPassword);
+
+
+//contact us
+router.post("/contactus", contactusValidation, contactusCONTROLLER);
 
 
 
