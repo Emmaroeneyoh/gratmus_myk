@@ -50,8 +50,6 @@ const contactusCONTROLLER = async (req, res) => {
         status_code: 200,
         status: true,
         message: "mail sent through",
-        
-        
       });
         }
       });
