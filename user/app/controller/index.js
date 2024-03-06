@@ -59,9 +59,9 @@ const contactus2CONTROLLER = async (req, res) => {
    var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: 'emmaroeneyoh@gmail.com',
+      user: 'mykcrimecontrol@gmail.com',
   
-      pass: appPassword,
+      pass:'ruqv hpju ncjt pyds',
     },
     tls: {
       rejectUnauthorized: false,
@@ -88,11 +88,17 @@ const contactus2CONTROLLER = async (req, res) => {
       transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
           console.log(error);
+            //end of nodemailer
+      return res.status(400).json({
+        status_code: 400,
+        status: true,
+        message: "mail not sent ",
+        
+        
+      });
         } else {
           console.log('Email sent: ' + info.response);
-        }
-      });
-      //end of nodemailer
+            //end of nodemailer
       return res.status(200).json({
         status_code: 200,
         status: true,
@@ -100,6 +106,9 @@ const contactus2CONTROLLER = async (req, res) => {
         
         
       });
+        }
+      });
+    
     } catch (error) {
       console.log(error);
       handleError(error.message)(res);
